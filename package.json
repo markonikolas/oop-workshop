@@ -1,0 +1,26 @@
+{
+  "name": "oop-fundimentals",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/main.js",
+  "scripts": {
+    "watch": "nodemon src/main.ts --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markonikolas/oop-fundimentals.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/markonikolas/oop-fundimentals/issues"
+  },
+  "homepage": "https://github.com/markonikolas/oop-fundimentals#readme",
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4"
+  }
+}
