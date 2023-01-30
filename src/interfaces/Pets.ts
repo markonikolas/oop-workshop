@@ -1,7 +1,7 @@
-import { AnimalType } from '../types';
+import { PetType } from '../types';
 
 export interface IPetCollection {
-    get getPetCollection(): AnimalType[]
+    get getPetCollection(): PetType[]
 
-    set setPetCollection(petCollection: AnimalType[])
+    set setPetCollection(petCollection: PetType[])
 }

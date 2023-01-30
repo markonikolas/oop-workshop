@@ -1,34 +1,34 @@
 import { IPetCollection } from '../interfaces/Pets';
-import { AnimalType } from '../types';
+import { PetType } from '../types';
 
 class PetCollection implements IPetCollection {
-    private petCollection: AnimalType[];
+    private petCollection: PetType[];
 
-    constructor(petCollection: AnimalType[] = []) {
+    constructor(petCollection: PetType[] = []) {
 
         this.petCollection = petCollection;
     }
 
-    get getPetCollection(): AnimalType[] {
+    get getPetCollection(): PetType[] {
         return this.petCollection;
     }
 
-    set setPetCollection(petCollection: AnimalType[]) {
+    set setPetCollection(petCollection: PetType[]) {
         this.petCollection = petCollection;
     }
 
-    public addPet(pet: AnimalType): string {
+    public addPet(pet: PetType): string {
         const petNames = this.getPetNames();
         const newPetCollection = [...this.getPetCollection, pet]
 
-        if (petNames.includes(pet.name)) return 'Can\'t add pet name that already exists. Pick another name.'
+        if (petNames.includes(pet.getName)) return 'Can\'t add pet name that already exists. Pick another name.'
 
         this.setPetCollection = newPetCollection;
 
-        return `Pet ${pet.name} added.`;
+        return `Pet ${pet.getName} added.`;
     }
 
-    removePet(name: string) {
+    public removePet(name: string) {
         const petNames = this.getPetNames();
 
         if (!petNames.includes(name)) return 'Can\'t remove non existant pet.'
@@ -40,7 +40,7 @@ class PetCollection implements IPetCollection {
         return `Pet ${name} added.`;
     }
 
-    getPetNames(): string[] {
+    public getPetNames(): string[] {
         return this.petCollection.map((pet: any) => pet.name);
     }
 }

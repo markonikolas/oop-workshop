@@ -1,11 +1,12 @@
 import Person from '../abstract/Person';
+import PetCollection from './PetCollection';
 import INamable from '../interfaces/Namable';
-import { AnimalType, Namable } from '../types';
+import { PetType, Namable } from '../types';
 
 class Owner extends Person implements INamable {
-    public petCollection: AnimalType[];
+    public petCollection: PetCollection;
 
-    constructor(person: Namable, petCollection: AnimalType[] = []) {
+    constructor(person: Namable, petCollection: PetCollection) {
         super(person);
 
         this.petCollection = petCollection;
