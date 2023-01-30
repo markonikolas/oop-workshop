@@ -1,5 +1,5 @@
-import Animal from '../abstract/Animal';
-import { DogType } from '../types';
+import Animal from '../../abstract/Animal';
+import { DogType } from '../../types';
 
 class Dog extends Animal {
 
