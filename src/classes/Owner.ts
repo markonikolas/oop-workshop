@@ -1,9 +1,10 @@
 import INamable from '../interfaces/Namable';
 import Person from '../abstract/Person';
-import { Namable } from '../types';
+import { AnimalType, Namable } from '../types';
+import { IPetCollection } from '../interfaces/Pets';
 
-class Owner extends Person implements INamable {
-    private petCollection;
+class Owner extends Person implements INamable, IPetCollection {
+    private petCollection: AnimalType[];
 
     constructor(person: Namable, petCollection: any = []) {
         super(person);
@@ -11,12 +12,12 @@ class Owner extends Person implements INamable {
         this.petCollection = petCollection;
     }
 
-    get getPetCollection() {
+    get getPetCollection(): AnimalType[] {
         return this.petCollection;
     }
 
-    set setPetCollection(pets: any) {
-        this.petCollection = pets;
+    set setPetCollection(petCollection: AnimalType[]) {
+        this.petCollection = petCollection;
     }
 
     getPetNames() {
@@ -25,11 +26,11 @@ class Owner extends Person implements INamable {
 
     addPet(pet: any) {
         const petNames = this.getPetNames();
-        const newPetCollection = [...this.getPetCollection(), pet]
+        const newPetCollection = [...this.getPetCollection, pet]
 
         if (petNames.includes(pet.name)) return 'Can\'t add pet name that already exists. Pick another name.'
 
-        this.setPetCollection(newPetCollection);
+        this.setPetCollection = newPetCollection;
     }
 
     removePet(name: string) {
@@ -37,9 +38,9 @@ class Owner extends Person implements INamable {
 
         if (!petNames.includes(name)) return 'Can\'t remove non existant pet.'
 
-        const newPetCollection = [...this.getPetCollection()].filter((pet: any) => name !== pet.name)
+        const newPetCollection = [...this.getPetCollection].filter((pet: any) => name !== pet.name)
 
-        this.setPetCollection(newPetCollection);
+        this.setPetCollection = newPetCollection;
     }
 }
 
