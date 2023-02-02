@@ -21,7 +21,7 @@ class PetCollection implements IPetCollection {
         const petNames = this.getPetNames();
         const newPetCollection = [...this.getPetCollection, pet]
 
-        if (petNames.includes(pet.getName)) return 'Can\'t add pet name that already exists. Pick another name.'
+        if (petNames.includes(pet.getName)) return `Can\'t add '${pet.getName}'. That name already exists. Pick another name.`;
 
         this.setPetCollection = newPetCollection;
 
@@ -45,4 +45,4 @@ class PetCollection implements IPetCollection {
     }
 }
 
-export default PetCollection;
+export default PetCollection

@@ -23,9 +23,11 @@ import PetCollection from './classes/PetCollection';
     const john = new Owner({ name: 'John Doe' }, petCollection);
 
     const duplicateMittens = john.petCollection.addPet(cat);
-    console.log(duplicateMittens)
+    console.log(duplicateMittens);
 
     const removeBuddy = john.petCollection.removePet('buddy');
 
-    console.log(john.petCollection)
+    console.log(removeBuddy)
+
+    console.log(john.petCollection);
 })()
