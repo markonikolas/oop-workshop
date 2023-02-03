@@ -9,3 +9,7 @@ export interface IFlies {
 export interface ISlides {
     slide(): string
 }
+
+export interface IRuns {
+    run(): string;
+}

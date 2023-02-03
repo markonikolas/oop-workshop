@@ -1,8 +1,8 @@
 interface INamable {
 
-    get getName(): string;
+    get name(): string;
 
-    set setName(name: string);
+    set name(name: string);
 }
 
 export default INamable;

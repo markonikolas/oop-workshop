@@ -1,33 +1,12 @@
-import Cat from './classes/animals/Cat'
-import Dog from './classes/animals/Dog';
-import Owner from './classes/Owner';
-import PetCollection from './classes/PetCollection';
+import BirdFactory from './abstract/Factory'
 
 (function () {
 
-    const cat = new Cat({
-        name: 'mittens',
-        breed: 'Persian'
-    });
+    const Noah = BirdFactory.setBirdProps({ name: 'Noah', breed: 'default' }).createBird('ostrich');
+    const Tux = BirdFactory.setBirdProps({ name: 'Noah', breed: 'default' }).createBird('penguin');
+    const GIJoe = BirdFactory.setBirdProps({ name: 'Noah', breed: 'default' }).createBird('pigeon');
 
-    const dog = new Dog({
-        name: 'buddy',
-        breed: 'German Shepard'
-    });
+    console.log({ Noah, Tux, GIJoe })
 
-    const petCollection = new PetCollection();
 
-    petCollection.addPet(cat);
-    petCollection.addPet(dog);
-
-    const john = new Owner({ name: 'John Doe' }, petCollection);
-
-    const duplicateMittens = john.petCollection.addPet(cat);
-    console.log(duplicateMittens);
-
-    const removeBuddy = john.petCollection.removePet('buddy');
-
-    console.log(removeBuddy)
-
-    console.log(john.petCollection);
 })()
