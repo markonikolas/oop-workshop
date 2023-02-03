@@ -1,5 +1,5 @@
-import Bird from '../../abstract/Bird';
-import { ISlides, IWalks } from '../../interfaces/Move';
+import Bird from '../../../abstract/Bird';
+import { ISlides, IWalks } from '../../../interfaces/Move';
 
 class Penguin extends Bird implements ISlides, IWalks {
     slide(): string {
@@ -11,7 +11,7 @@ class Penguin extends Bird implements ISlides, IWalks {
     }
 
     move(): string {
-        return this.slide() + ' ' + this.walk();
+        return this.slide() + ' and ' + this.walk();
     }
 }
 
