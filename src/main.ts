@@ -2,11 +2,13 @@ import BirdFactory from './abstract/Factory'
 
 (function () {
 
-    const Noah = BirdFactory.setBirdProps({ name: 'Noah', breed: 'default' }).createBird('ostrich');
-    const Tux = BirdFactory.setBirdProps({ name: 'Noah', breed: 'default' }).createBird('penguin');
-    const GIJoe = BirdFactory.setBirdProps({ name: 'Noah', breed: 'default' }).createBird('pigeon');
+    const Noah = BirdFactory.createBird('ostrich', { name: 'Noah', breed: 'default' });
+    const Tux = BirdFactory.createBird('penguin', { name: 'Noah', breed: 'default' });
+    const GIJoe = BirdFactory.createBird('pigeon', { name: 'Noah', breed: 'default' });
 
-    console.log({ Noah, Tux, GIJoe })
+    console.log(Noah.move());
 
+    console.log(Tux.move());
 
+    console.log(GIJoe.move());
 })()

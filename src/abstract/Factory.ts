@@ -3,11 +3,8 @@ import Penguin from '../classes/Animals/Birds/Penguin';
 import Pigeon from '../classes/Animals/Birds/Pigeon';
 
 class BirdFactory {
-    private static birdProps: any;
 
-    static createBird(prop: any) {
-        const bird = this.birdProps;
-
+    static createBird(prop: any, bird: any) {
         switch (prop) {
             case 'penguin':
                 return new Penguin(bird);
@@ -21,12 +18,6 @@ class BirdFactory {
             default:
                 throw new TypeError(`There is no type ${prop}.`)
         }
-    }
-
-    static setBirdProps(props: any) {
-        this.birdProps = props;
-
-        return this;
     }
 }
 

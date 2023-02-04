@@ -1,32 +1,25 @@
+import Animal from './Animal';
+
 import INamable from '../interfaces/Namable';
+import { BirdTypes } from '../types';
 
-abstract class Bird implements INamable {
-    private bname: string;
-    private bbreed: string;
-
-    constructor(bird: any) {
-        const { name, breed } = bird;
-        this.bname = name;
-        this.bbreed = breed;
-    }
-
-    get name(): string {
-        return this.bname;
-    };
-
-    set name(name: string) {
-        this.bname = name;
-    };
-
-    get breed(): string {
-        return this.bbreed;
-    };
-
-    set breed(breed: string) {
-        this.bbreed = breed;
-    };
+abstract class Bird extends Animal implements INamable {
 
     abstract move(): string;
+
+    constructor(bird: BirdTypes) {
+        const { name, species } = bird;
+
+        super(name, species);
+    }
+
+    get name() {
+        return this._name;
+    }
+
+    set name(name: string) {
+        this._name = name;
+    }
 }
 
 export default Bird;

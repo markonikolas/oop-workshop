@@ -1,25 +1,19 @@
 import Bird from '../../../abstract/Bird';
 import { IFlies, IWalks } from '../../../interfaces/Move';
 
+import * as Move from '../../../util/move';
+
 class Pigeon extends Bird implements IFlies, IWalks {
-    get name(): string {
-        throw new Error('Method not implemented.');
-    }
-
-    set name(name: string) {
-        throw new Error('Method not implemented.');
-    }
-
     walk(): string {
-        return 'I can move by walking.';
+        return Move.walk();
     }
 
     fly(): string {
-        return 'I can move by flying.'
+        return Move.fly();
     }
 
     move(): string {
-        return this.walk() + ' and ' + this.fly();
+        return this.fly() + ' and ' + this.walk();
     }
 }
 
