@@ -7,10 +7,6 @@ class Penguin extends Bird implements ISlidable, IWalkable {
         return Move.slide();
     }
 
-    walk(): string {
-        return Move.walk();
-    }
-
     move(): string {
         return this.slide() + ' and ' + this.walk();
     }

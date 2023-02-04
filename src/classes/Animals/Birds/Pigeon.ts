@@ -3,10 +3,6 @@ import { IFlyable, IWalkable } from '../../../interfaces/Move';
 import * as Move from '../../../util/move';
 
 class Pigeon extends Bird implements IFlyable, IWalkable {
-    walk(): string {
-        return Move.walk();
-    }
-
     fly(): string {
         return Move.fly();
     }

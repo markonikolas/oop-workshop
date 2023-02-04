@@ -1,9 +1,12 @@
 import Animal from './Animal';
 
-import INamable from '../interfaces/Namable';
+import { INamable } from '../interfaces/Namable';
+import { IWalkable } from '../interfaces/Move';
 import { BirdTypes } from '../types';
 
-abstract class Bird extends Animal implements INamable {
+import * as Move from '../util/move';
+
+abstract class Bird extends Animal implements INamable, IWalkable {
 
     abstract move(): string;
 
@@ -19,6 +22,10 @@ abstract class Bird extends Animal implements INamable {
 
     set name(name: string) {
         this._name = name;
+    }
+
+    walk(): string {
+        return Move.walk();
     }
 }
 
