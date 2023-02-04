@@ -1,9 +1,8 @@
 import Bird from '../../../abstract/Bird';
-import { IRuns, IWalks } from '../../../interfaces/Move';
-
+import { IRunnable, IWalkable } from '../../../interfaces/Move';
 import * as Move from '../../../util/move';
 
-class Ostrich extends Bird implements IWalks, IRuns {
+class Ostrich extends Bird implements IWalkable, IRunnable {
     walk(): string {
         return Move.walk();
     }

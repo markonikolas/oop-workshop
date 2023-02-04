@@ -1,15 +1,15 @@
-export interface IWalks {
+export interface IWalkable {
     walk(): string
 }
 
-export interface IFlies {
+export interface IFlyable {
     fly(): string
 }
 
-export interface ISlides {
+export interface ISlidable {
     slide(): string
 }
 
-export interface IRuns {
+export interface IRunnable {
     run(): string;
 }

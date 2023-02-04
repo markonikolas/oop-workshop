@@ -1,8 +1,8 @@
 import Bird from '../../../abstract/Bird';
-import { ISlides, IWalks } from '../../../interfaces/Move';
+import { ISlidable, IWalkable } from '../../../interfaces/Move';
 import * as Move from '../../../util/move';
 
-class Penguin extends Bird implements ISlides, IWalks {
+class Penguin extends Bird implements ISlidable, IWalkable {
     slide(): string {
         return Move.slide();
     }

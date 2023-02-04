@@ -1,9 +1,8 @@
 import Bird from '../../../abstract/Bird';
-import { IFlies, IWalks } from '../../../interfaces/Move';
-
+import { IFlyable, IWalkable } from '../../../interfaces/Move';
 import * as Move from '../../../util/move';
 
-class Pigeon extends Bird implements IFlies, IWalks {
+class Pigeon extends Bird implements IFlyable, IWalkable {
     walk(): string {
         return Move.walk();
     }
